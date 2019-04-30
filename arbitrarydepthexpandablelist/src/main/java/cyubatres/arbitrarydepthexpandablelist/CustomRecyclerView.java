@@ -27,7 +27,7 @@ import android.view.View;
 
 import java.util.List;
 
-public abstract class CustomRecyclerView extends RecyclerView implements OnItemClickListener {
+public class CustomRecyclerView extends RecyclerView implements OnItemClickListener {
 
     private Context context;
     private ItemsAdapter itemsAdapter;
@@ -166,7 +166,9 @@ public abstract class CustomRecyclerView extends RecyclerView implements OnItemC
         }
     }
 
-    public abstract void toggleIcon (int pos);
+    public void toggleIcon (int pos) {
+
+    }
 
     private final class RecyclerItemClickListener implements RecyclerView.OnItemTouchListener {
         private GestureDetector gestureDetector;

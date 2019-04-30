@@ -1,5 +1,23 @@
 package edu.asu.bsse.tcyubahi.arbitrarydepthexpandablelist;
 
+/*
+ * Copyright @ 2019 Tresor Cyubahiro
+ * @author Tresor Cyubahiro
+ * @version April 25, 2019
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -22,6 +40,7 @@ public class MyListAdapter extends ItemsAdapter {
     private Context context;
     public MyListAdapter(List<?> items, Context context) {
         super(items, context);
+        this.itemList = (List<Item>) items;
         this.context = context;
     }
 
@@ -69,6 +88,11 @@ public class MyListAdapter extends ItemsAdapter {
     @Override
     public int getItemCount() {
         return itemList.size();
+    }
+
+    @Override
+    public void setIndent(int indent) {
+        this.indent = indent;
     }
 
     @Override
